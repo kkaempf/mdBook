@@ -17,7 +17,8 @@ cd target/release
 case $1 in
   ubuntu*)
     asset="mdbook-$TAG-$host.tar.gz"
-    mkdir -p ../../$asset
+    d=`dirname ../../$asset`
+    mkdir -p $d
     tar czf ../../$asset mdbook
     ;;
   macos*)
